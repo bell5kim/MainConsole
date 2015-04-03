@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MachineInfo</class>
+ <widget class="QWidget" name="MachineInfo">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>603</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Machine Information</string>
+  </property>
+  <widget class="QPushButton" name="cancelButton">
+   <property name="geometry">
+    <rect>
+     <x>433</x>
+     <y>414</y>
+     <width>160</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="text">
+    <string>&amp;Cancel</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+C</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="saveButton">
+   <property name="geometry">
+    <rect>
+     <x>433</x>
+     <y>371</y>
+     <width>160</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::TabFocus</enum>
+   </property>
+   <property name="text">
+    <string>&amp;Apply</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+A</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resetButton">
+   <property name="geometry">
+    <rect>
+     <x>433</x>
+     <y>328</y>
+     <width>160</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
+   <property name="text">
+    <string>&amp;Reset to XiO</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+R</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxMachineInput">
+   <property name="geometry">
+    <rect>
+     <x>6</x>
+     <y>322</y>
+     <width>411</width>
+     <height>127</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Machine Data Input</string>
+   </property>
+   <widget class="QLabel" name="AvalLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>81</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Flattening Filter Attenuation Factor (A-VALUE):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="oMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>19</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Orientation of MLC Traveling:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="xMLCcheckBox">
+    <property name="geometry">
+     <rect>
+      <x>357</x>
+      <y>40</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="oMLCcomboBox">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>18</y>
+      <width>80</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>None</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>X</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Y</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="ZvalLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>103</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0.5</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="xMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>41</y>
+      <width>250</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MLC Included in X Penumbra:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="AvalLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>81</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>9.0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="yMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>59</y>
+      <width>250</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MLC Included in Y Penumbra:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="yMLCcheckBox">
+    <property name="geometry">
+     <rect>
+      <x>357</x>
+      <y>58</y>
+      <width>20</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ZvalLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>103</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Min Thickness of Flattening Filter (Z-VALUE):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBoxMachineInfo">
+   <property name="geometry">
+    <rect>
+     <x>5</x>
+     <y>4</y>
+     <width>601</width>
+     <height>315</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Machine Infomation</string>
+   </property>
+   <widget class="QLabel" name="SFDLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Source to Flattening Filter Bottom Distance (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="UJTLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>155</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SUJDLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>116</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Source to Upper Jaw Distance (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="cMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>272</y>
+      <width>100</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MLC Center (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="EnergyLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>22</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MaxFSLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>200</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Maximum Field Size (mm) (WxL)</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>41</y>
+      <width>130</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>MLC Type:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="LJTLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>174</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="thMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>288</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Thin MLC Width (mm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="rMLCLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>292</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="MaxFSLLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>60</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="iMLCLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>186</x>
+      <y>269</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="tkMLCLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>186</x>
+      <y>250</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="cMLCLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>273</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MaxFSWLLabel">
+    <property name="geometry">
+     <rect>
+      <x>312</x>
+      <y>61</y>
+      <width>16</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SMDLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>192</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Source to MLC (Middle) Distance (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SLJDLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>135</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Source to Lower Jaw Distance (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="thMLCLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>186</x>
+      <y>288</y>
+      <width>50</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ESCDLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>98</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tkMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>19</x>
+      <y>250</y>
+      <width>150</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Thick MLC Width (mm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="NormEnergyLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>22</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>Nominal Energy (MV):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="UJTLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>154</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Upper Jaw Thickness (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="SUJDLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>117</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="nMLCLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>231</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="SMDLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>193</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="LineEditMLCtype">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>41</y>
+      <width>130</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ESCDLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>98</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Effective Source to Collimator Distance (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="textLabelInfo">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>92</y>
+      <width>170</width>
+      <height>210</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string>These information are taken from XiO machine file.
+
+If you want to use different values from XiO machine, you can change values here and click &quot;Apply&quot; button to save.
+
+If you want to reset all values to XiO machine, click &quot;Reset to XiO&quot; and &quot;Apply&quot; buttons sequentially.</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="iMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>269</y>
+      <width>171</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Number of Inner Thin MLCs:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LJTLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>173</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Lower Jaw Thickness (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="MaxFSWLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>60</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBoxMLCtype">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>20</y>
+      <width>140</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>None</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>SIMPLE-MLC</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>DBLFOCUS-MLC</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>RNDFOCUS-MLC</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>ELEKTA-MLC</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>VARIAN-MLC</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="tMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>212</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MLC Thickness (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>231</y>
+      <width>310</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Total Number of Leaf Pairs:</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="tMLCLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>212</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="SLJDLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>136</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="rMLCLabel">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>291</y>
+      <width>120</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MLC Tip Radius (cm):</string>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="SFDLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>79</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>N/A</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
+ <resources/>
+ <connections/>
+</ui>
